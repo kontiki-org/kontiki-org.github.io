@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Kontiki — one compact Python stack for services</title>
+  <title>Kontiki — build, watch, alert</title>
   <meta name="description" content="Build services, watch them live, and get alerted when something fails — in one small Python stack." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -304,6 +304,7 @@
     .shot-grid {
       display: grid;
       gap: 0.85rem;
+      align-items: start;
     }
     @media (min-width: 700px) {
       .shot-grid.two { grid-template-columns: 1fr 1fr; }
@@ -412,10 +413,12 @@
       <img class="hero-brand" src="assets/kontiki_logo.png" alt="Kontiki" width="420" height="98" />
       <h1>Build services, watch them live, and get alerted when something fails — in one small Python stack.</h1>
       <p class="products">
-        <strong>Kontiki</strong> is a <strong class="accent">compact open-source stack</strong> for teams
-        that need the essentials —
-        <strong class="accent">building, running and monitoring Python services</strong> —
-        without the heavy ops stack.
+        <strong>Kontiki</strong> is a <strong class="accent">compact open-source stack</strong>
+        for Python services.
+        <strong class="accent">Build every kind of service with Kontiki</strong>
+        — from a complex domain service to a database backup job —
+        and you get messaging, registry, logs, and alerts in one model,
+        without a separate ops toolchain.
       </p>
       <div class="cta-row">
         <a class="btn btn-primary" href="#start">Get started</a>
@@ -431,9 +434,9 @@
         </p>
         <ul class="lede-points">
           <li><strong>Write only your business logic</strong> — Kontiki manages RabbitMQ connections, message routing (RPC, events, sessions, broadcast), service lifecycle, and configuration merge.</li>
-          <li><strong>Design interactions as messages</strong> — combine RPC, events, broadcast, and per-instance sessions to describe how services collaborate.</li>
-          <li><strong>Configuration-driven</strong> — merged YAML and a unified runner so services start the same way in development and production.</li>
-          <li><strong>Scale out</strong> — run as many service instances as you need by starting more processes.</li>
+          <li><strong>Design interactions as messages</strong> — RPC for request/reply; events with competing consumers, broadcast, or session-targeted delivery.</li>
+          <li><strong>One model from config to tests</strong> — merged YAML, a unified runner, and kontiki.testing on the same bus shape as production.</li>
+          <li><strong>Fleet-aware by design</strong> — heartbeats, degraded state, service groups, and flow correlation via the registry.</li>
         </ul>
         <div class="entries">
           <article class="entry">
@@ -498,12 +501,12 @@
         <span class="section-kicker brand"><a href="https://github.com/kontiki-org/kontiki-tui">kontiki-tui</a></span>
         <h2>Watch your services live</h2>
         <p class="lede">
-          A Textual TUI over what the Kontiki registry already tracks — plus local logs.
+          A Textual TUI over the registry and monitor — fleet, open alerts, silences, and logs from one SSH session.
         </p>
         <ul class="lede-points">
-          <li><strong>Services</strong> — status, pid/host, version, and local stats.</li>
-          <li><strong>Events &amp; exceptions</strong> — inspect what the registry recorded, with local filters.</li>
-          <li><strong>Logs</strong> — read configured log files without leaving the terminal.</li>
+          <li><strong>Services</strong> — status, heartbeat, versions, and mute; slice the fleet with service groups.</li>
+          <li><strong>Incidents &amp; silences</strong> — open ops alerts and persisted mutes, without leaving the terminal.</li>
+          <li><strong>Events, exceptions &amp; logs</strong> — what the registry recorded, plus log files filtered by the same groups.</li>
         </ul>
         <div class="visual shot-grid two">
           <figure class="shot">
@@ -511,8 +514,8 @@
             <figcaption>Services tab</figcaption>
           </figure>
           <figure class="shot">
-            <img src="assets/events.png" alt="kontiki-tui events tab" width="960" height="540" />
-            <figcaption>Events tab</figcaption>
+            <img src="assets/incidents.png" alt="kontiki-tui incidents tab" width="960" height="540" />
+            <figcaption>Incidents tab</figcaption>
           </figure>
         </div>
         <p class="note" style="margin-top: 1.25rem;">
@@ -529,9 +532,9 @@
           A small ops suite for Kontiki platforms — complete enough to run, simple enough to own.
         </p>
         <ul class="lede-points">
+          <li><strong>Alerts that matter from day one</strong> — fleet gaps, degraded or down services, fingerprinted exceptions, full disks.</li>
           <li><strong>One complete ops loop</strong> — build, observe, get alerted — no patchwork of tools to glue together.</li>
-          <li><strong>Alerts that matter from day one</strong> — fleet gaps, bad service state, full disks: signals you can act on immediately.</li>
-          <li><strong>Platform-native, low overhead</strong> — built on the Registry and the bus you already run, without a separate observability stack.</li>
+          <li><strong>Platform-native, low overhead</strong> — built on the registry and the bus you already run, without a separate observability stack.</li>
         </ul>
         <div class="visual narrow">
           <figure class="shot">
